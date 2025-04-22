@@ -13,10 +13,6 @@
             background-color: #dc3545;
             color: white;
         }
-        .btn-suspend {
-            background-color: #ffc107;
-            color: black;
-        }
         .bg-black {
             background-color: #343a40;
         }
@@ -28,6 +24,7 @@
 
     <!-- Service Moderation Section -->
     <ul class="list-group mb-5">
+        <#if services?? && services?size > 0>
         <#list services as service>
         <li class="list-group-item d-flex justify-content-between align-items-center">
             <div>
@@ -48,26 +45,10 @@
 </div>
 </li>
 </#list>
+<#else>
+<li class="list-group-item">No services available.</li>
+</#if>
 </ul>
-
-<!-- Pet Sitter Profiles Section -->
-<div class="card mb-4">
-    <div class="card-header text-white bg-black">
-        <h3>Pet Sitter Profiles</h3>
-    </div>
-    <div class="card-body">
-        <ul class="list-group">
-            <#list providers as provider>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                ${provider.name} - Status: ${provider.approvalStatus}
-                <form method="post" action="/admin/providers/suspend/${provider.id}">
-                    <button class="btn btn-suspend btn-sm" type="submit">Suspend</button>
-                </form>
-            </li>
-        </#list>
-        </ul>
-    </div>
-</div>
 
 <!-- Flagged Services Section -->
 <div class="card mb-4">
@@ -76,6 +57,7 @@
     </div>
     <div class="card-body">
         <ul class="list-group">
+            <#if flaggedServices?? && flaggedServices?size > 0>
             <#list flaggedServices as service>
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 ${service.name} - Reported by ${service.reportCount} users
@@ -89,8 +71,11 @@
                 </div>
             </li>
         </#list>
-        </ul>
-    </div>
+        <#else>
+        <li class="list-group-item">No flagged services found.</li>
+    </#if>
+    </ul>
+</div>
 </div>
 </div>
 </body>

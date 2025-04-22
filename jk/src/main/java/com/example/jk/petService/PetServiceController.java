@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("/Petservices")
+@RequestMapping("/services")
 public class PetServiceController {
     @Autowired
     private PetServiceService petServiceService;

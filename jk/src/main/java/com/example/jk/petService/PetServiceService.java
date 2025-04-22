@@ -12,6 +12,7 @@ public class PetServiceService {
     @Autowired
     private PetServiceRepository petServiceRepository;
 
+
     public PetService addService(PetService petService) {
         return petServiceRepository.save(petService);
     }
@@ -40,6 +41,28 @@ public class PetServiceService {
         }
         return false;
     }
+    public List<PetService> getReportedServices(int count) {
+        return petServiceRepository.findByReportCountGreaterThan(count);
+    }
+
+
+    public List<PetService> getUnapprovedServices() {
+        return petServiceRepository.findByApprovedFalse();
+    }
+
+    public boolean approveService(int id) {
+        Optional<PetService> optionalService = petServiceRepository.findById(id);
+        if (optionalService.isPresent()) {
+            PetService service = optionalService.get();
+            service.setApproved(true);
+            petServiceRepository.save(service);
+            return true;
+        }
+        return false;
+    }
+
+
+
 }
 
 

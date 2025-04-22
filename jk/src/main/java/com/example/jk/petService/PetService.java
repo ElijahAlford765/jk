@@ -9,15 +9,19 @@ public class PetService {
     private int serviceId;
     private int providerId;
     private String description;
+
     private float price;
+    @Column(nullable = false)
     private String availability;
     private int reportCount;
+    @Column(nullable = false)
     private boolean approved;
+    private String serviceType;
 
     public PetService() {
     }
 
-    public PetService(int providerId, String description, float price, String availability, boolean approved, int reportCount) {
+    public PetService(int providerId, String description, float price, String availability, boolean approved, int reportCount, String serviceType) {
         this.providerId = providerId;
         this.description = description;
         this.price = price;
@@ -25,15 +29,25 @@ public class PetService {
         this.reportCount = reportCount;
 
         this.approved = approved;
+        this.serviceType = serviceType;
     }
 
-    public boolean getisApproved() {
+    public boolean isApproved() {
         return approved;
 
     }
     public void setApproved(boolean approved){
         this.approved = approved;
     }
+
+    public String getServiceType() {
+        return serviceType;
+    }
+
+    public void setServiceType(String serviceType) {
+        this.serviceType = serviceType;
+    }
+
 
 
     public int getReportCount() {

@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface ReviewRepository  extends JpaRepository<Review, Integer> {
     List<Review> findByProviderId(int providerId);
-    List<Review> findByReported(boolean reported);
+    List<Review> findByReportedTrue();
 }

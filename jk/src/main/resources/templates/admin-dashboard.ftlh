@@ -2,14 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Admin Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="styles.css">
-
     <style>
-
         .sidebar {
             width: 250px;
             height: 100vh;
@@ -17,24 +12,9 @@
             color: white;
             padding-top: 20px;
         }
-
-
-        .paw-pal-brand {
-            font-size: 28px;
-            font-weight: bold;
-            text-transform: uppercase;
-            writing-mode: vertical-rl;
-            transform: rotate(180deg);
-            margin-bottom: 20px;
-            letter-spacing: 3px;
-        }
-
-
         .center-content {
             height: 100vh;
         }
-
-
         .welcome-section {
             background-image: url('https://clipart-library.com/images/6Ty5EXL6c.jpg');
             background-size: contain;
@@ -44,17 +24,15 @@
             border-radius: 15px;
         }
     </style>
-
 </head>
-
 <body>
 <div class="d-flex">
     <nav class="sidebar d-flex flex-column align-items-center text-white p-3">
         <ul class="nav flex-column w-100 text-center">
-            <li class="nav-item"><a class="nav-link text-white" href="admin-moderation.ftlh">Moderate Services</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="admin-users.ftlh">Manage Users</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="alerts.ftlh">Notifications</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="admin-stats.ftlh">Statistics</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="/admin/services">Moderate Services</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="/admin/reviews">Manage Reviews</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="/admin/users">Manage Users</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="/admin/stats">Statistics</a></li>
         </ul>
     </nav>
 
